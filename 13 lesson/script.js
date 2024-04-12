@@ -5,25 +5,25 @@
 }
 // gopni4ek
 {
-    let text = prompt('enter your text').split(",").join(" блін,");
+    const text = prompt('enter your text').split(",").join(" блін,");
     alert(text);
 }
 // capitalize
 {
-    let str = "cANBerRa";
-    let result = str.toLowerCase();
+    const str = "cANBerRa";
+    const result = str.toLowerCase();
     console.log(result.charAt(0).toUpperCase() + result.slice(1)); //Canberra
 }
 // word count
 {
-    let str = prompt("enter your sentence");
+    const str = prompt("enter your sentence");
     console.log(str.trim().split(' ').length);
 }
 // credentials
 {
-    let firstName =  prompt("enter your first name");
-    let lastName =  prompt("enter your last name");
-    let patronymic =  prompt("enter your patronymic");
+    const firstName =  prompt("enter your first name");
+    const lastName =  prompt("enter your last name");
+    const patronymic =  prompt("enter your patronymic");
     fullName = (firstName.charAt(0).toUpperCase() + firstName.slice(1)) + " " +
                (lastName.charAt(0).toUpperCase() + lastName.slice(1)) + " " +
                (patronymic.charAt(0).toUpperCase() + patronymic.slice(1));
@@ -31,29 +31,29 @@
 }
 // beer
 {
-    let str = "Було жарко. Василь пив пиво вприкуску з креветками"
-    let result = str.replace("пиво", "чай")
+    const str = "Було жарко. Василь пив пиво вприкуску з креветками"
+    const result = str.replace("пиво", "чай")
     console.log(result); //"Було жарко. Василь пив чай уприкуску з креветками"
 }
 // no tag
 {
-    let str = "якийсь текст, в якому є один тег <br /> і всяке інше";
-    let firstIndex = str.indexOf("<");
-    let lastIndex = str.indexOf(">");
-    let result = ((str.slice("", firstIndex -1)) + (str.slice(lastIndex + 1)));
+    const str = "якийсь текст, в якому є один тег <br /> і всяке інше";
+    const firstIndex = str.indexOf("<");
+    const lastIndex = str.indexOf(">");
+    const result = ((str.slice("", firstIndex -1)) + (str.slice(lastIndex + 1)));
     console.log(result); //якийсь текст, в якому є один тег і всяке інше
 }
 // big tag
 {
-    let str = "якийсь текст у якому є один тег <br /> і всяке інше";
-    let firstIndex = str.indexOf("<");
-    let lastIndex = str.indexOf(">");
-    let result = ((str.slice("", firstIndex -1)) + (str.slice(firstIndex -1, lastIndex +1).toUpperCase()) + (str.slice(lastIndex + 1)));
+    const str = "якийсь текст у якому є один тег <br /> і всяке інше";
+    const firstIndex = str.indexOf("<");
+    const lastIndex = str.indexOf(">");
+    const result = ((str.slice("", firstIndex -1)) + (str.slice(firstIndex -1, lastIndex +1).toUpperCase()) + (str.slice(lastIndex + 1)));
     console.log(result); //якийсь текст, в якому є один тег <BR /> і всяке інше
 }
 // new line
 {
-    let text = prompt('enter your text').split("\\n").join("\n");
+    const text = prompt('enter your text').split("\\n").join("\n");
     console.log(text);
 }
 // youtube
