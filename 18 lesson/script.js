@@ -190,7 +190,7 @@
             toSelect.innerHTML = '';
     
             // Список валют
-            const currencies = ['USD', 'EUR', 'GBP', 'JPY']; // Додайте інші валюти за необхідності
+            const currencies = ['USD', 'EUR', 'GBP', 'JPY']; 
     
             // Додати кожну валюту як варіант вибору
             currencies.forEach(currency => {
@@ -210,7 +210,7 @@
             const amount = parseFloat(amountInput.value);
     
             // Симулюємо обчислення крос-курсу та результату обміну
-            const exchangeRate = Math.random() * (2 - 0.5) + 0.5; // Тут можна використати реальний API для отримання курсів валют
+            const exchangeRate = Math.random() * (2 - 0.5) + 0.5; 
             const result = amount * exchangeRate;
     
             // Оновлення крос-курсу та результату
