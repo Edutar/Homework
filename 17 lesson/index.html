@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <input type='number' id="firstNumber" />
+<input type='number' id="secondNumber" />
+<div id="divisionResult">
+    Результат ділення
+</div>
+<script>
+    const calcResult = () => {
+        const firstValue = parseFloat(firstNumber.value);
+        const secondValue = parseFloat(secondNumber.value);
+        if (!isNaN(firstValue) && !isNaN(secondValue) && secondValue !== 0) {
+            const result = firstValue / secondValue;
+            divisionResult.innerHTML = `Результат поділу: ${firstValue} / ${secondValue} = ${result} (округлено до найближчого меншого цілого: ${Math.floor(result)})`;
+        } else {
+            divisionResult.innerHTML = "Некоректні вхідні дані. Перевірте, чи введені числа та чи друге число не дорівнює нулю.";
+        }
+    }
+    firstNumber.oninput = secondNumber.oninput = calcResult;
+</script>
+
+<!-- ================================================ -->
+
+<input type='number' id="input1" />
+<input type='number' id="input2" />
+<input type='number' id="input3" />
+<input type='number' id="input4" />
+<div id="calculationResult"></div>
+
+<script>
+    function calculateValues(...inputs) {
+        let sum = 0;
+        let product = 1;
+        let division = "Неможливо обчислити ділення: ділення на нуль";
+        for (let input of inputs) {
+            sum += input;
+            product *= input;
+            if (input === 0) {
+                division = "Неможливо обчислити ділення: ділення на нуль";
+            } else {
+                if (division === "Неможливо обчислити ділення: ділення на нуль") {
+                    division = input;
+                } else {
+                    division /= input;
+                }
+            }
+        }
+
+        return {
+            sum: sum,
+            product: product,
+            division: division
+        };
+    }
+
+    const inputFields = document.querySelectorAll('input[type="number"]');
+    const resultDiv = document.getElementById('calculationResult');
+
+    inputFields.forEach(inputField => {
+        inputField.addEventListener('input', () => {
+            const inputs = Array.from(inputFields).map(inputField => parseFloat(inputField.value) || 0);
+            const result = calculateValues(...inputs);
+            resultDiv.innerHTML = `Сума: ${result.sum}, Добуток: ${result.product}, Ділення: ${result.division}`;
+        });
+    });
+</script>
+
+</body>
+</html>
