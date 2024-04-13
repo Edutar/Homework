@@ -33,9 +33,9 @@
 }
 // Html tree
 {
-    {
+    var htmlTree = {
         tagName: "body",
-        children = [
+        children : [
             {
                 tagName: "div",
                 children: [
@@ -87,25 +87,21 @@
 }
 // Parent
 {
-    {
+    const parent = {
         tagName: "body",
-        children = [
+        children: [
             {
                 tagName: "div",
-                parent: null,
+                parent: null, 
                 children: [
                     {
                         tagName: "span",
-                        parent: {
-                            tagName: "div"
-                        },
+                        parent: null, 
                         children: ["Enter a data please:"]
                     },
                     {
                         tagName: "br",
-                        parent: {
-                            tagName: "div"
-                        }
+                        parent: null 
                     },
                     {
                         tagName: "input",
@@ -113,9 +109,7 @@
                             type: "text",
                             id: "name"
                         },
-                        parent: {
-                            tagName: "div"
-                        }
+                        parent: null 
                     },
                     {
                         tagName: "input",
@@ -123,24 +117,20 @@
                             type: "text",
                             id: "surname"
                         },
-                        parent: {
-                            tagName: "div"
-                        }
+                        parent: null 
                     }
                 ]
             },
             {
                 tagName: "div",
-                parent: null,
+                parent: null, 
                 children: [
                     {
                         tagName: "button",
                         attrs: {
                             id: "ok"
                         },
-                        parent: {
-                            tagName: "div"
-                        },
+                        parent: null, 
                         children: ["OK"]
                     },
                     {
@@ -148,15 +138,14 @@
                         attrs: {
                             id: "cancel"
                         },
-                        parent: {
-                            tagName: "div"
-                        },
+                        parent: null, 
                         children: ["Cancel"]
                     }
                 ]
             }
         ]
-    }
+    };
+    
     
 }
 // Change OK
@@ -235,14 +224,38 @@
 }
 // Destructure
 {
-    const {
+    const htmlStructure = {
         children: [
-            { children: [ { children: [spanText] }] }, 
-            ,
-            { children: [ { attrs: { id: secondButtonId } }] }, 
-            { children: [ { attrs: { id: secondInputId } }] } 
+            {
+                children: [
+                    {
+                        children: [
+                            "Текст у тегу span"
+                        ]
+                    }
+                ]
+            },
+            {
+                children: [
+                    {
+                        attrs: {
+                            id: "secondButtonId"
+                        }
+                    }
+                ]
+            },
+            {
+                children: [
+                    {
+                        attrs: {
+                            id: "secondInputId" 
+                        }
+                    }
+                ]
+            }
         ]
-    } = htmlStructure;
+    };
+    
     
     console.log(spanText);
     console.log(secondButtonId);
